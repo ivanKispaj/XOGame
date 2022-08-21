@@ -69,14 +69,15 @@ class GameViewController: UIViewController {
             
         case .computer:
             switch difficultyLevel{
-            case .easy:
-                print("computer easy")
-            case .middle:
-                print("computer middle")
+
             case .hard:
                 print("computer hard")
             default:
-                return
+                self.secondPlayerTurnLabel.text = "Computer step"
+                isLastStep = true
+                currentState = VsComputerState(player: player,
+                                                gameViewCointroller: self,
+                                                markViewPrototype: player.playerMark)
             }
             
         default:
@@ -85,7 +86,7 @@ class GameViewController: UIViewController {
     }
     
     private func goToNextState() {
-        
+                
         switch currentState {
             
         case is PlayerInputState:
@@ -113,7 +114,12 @@ class GameViewController: UIViewController {
                 self.currentState.begin()
                 
             }
-            
+        case is VsComputerState:
+            let playerInputState = self.currentState as! VsComputerState
+            let player = playerInputState.player.next
+            currentState = VsComputerState(player: player,
+                                           gameViewCointroller: self,
+                                           markViewPrototype: player.playerMark)
         default:
             break
         }

@@ -69,9 +69,10 @@ class MenuViewController: UIViewController {
         default:
             GameboardSize.rows = 3
             GameboardSize.columns = 3
-            
+           
         }
-        
+        nextVC.gameOpponent = .computer
+        nextVC.difficultyLevel = difficulty
         self.present(nextVC, animated: true)
     }
 
