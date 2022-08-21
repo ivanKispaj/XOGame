@@ -15,14 +15,20 @@ final class PlayerInputState: GameState {
     private(set) weak var gameBoard: Gameboard?
     private(set) weak var gameViewController: GameViewController?
     private(set) weak var gameBoardView: GameboardView?
+    private(set) var markPrototype: MarkView
     
-    init(player: Player, gameBoard: Gameboard, gameViewController: GameViewController, gameBoardView: GameboardView) {
+//MARK: - init
+    
+    init(player: Player,gameViewCointroller: GameViewController,markViewPrototype: MarkView) {
+        self.gameBoard = gameViewCointroller.gameBoard
+        self.gameBoardView = gameViewCointroller.gameboardView
+        self.markPrototype = markViewPrototype
+        self.gameViewController = gameViewCointroller
         self.player = player
-        self.gameBoard = gameBoard
-        self.gameBoardView = gameBoardView
-        self.gameViewController = gameViewController
     }
-    
+
+
+//MARK: - PublicFunc
     func begin() {
         switch player {
         case .first:
@@ -41,15 +47,8 @@ final class PlayerInputState: GameState {
             return
         }
 
-        let mark: MarkView
-        switch player {
-        case .first:
-            mark = XView()
-        case .second:
-            mark = OView()
-        }
         gameBoard?.setPlayer(player, at: position)
-        gameBoardView.placeMarkView(mark, at: position)
+        gameBoardView.placeMarkView(markPrototype.copy(), at: position)
         isComleted = true
     }
     

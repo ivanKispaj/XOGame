@@ -18,6 +18,7 @@ final class GameOverState: GameState {
         self.gameViewController = gameViewController
     }
     func begin() {
+        log(.gameFinished(winner: self.winner))
         self.gameViewController?.winnerLabel.isHidden = false
         if let winner = self.winner {
             self.gameViewController?.winnerLabel.text = winnerName(from: winner)

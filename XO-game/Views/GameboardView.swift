@@ -48,9 +48,10 @@ public class GameboardView: UIView {
     
     public func placeMarkView(_ markView: MarkView, at position: GameboardPosition) {
         guard self.canPlaceMarkView(at: position) else { return }
-        updateFrame(for: markView, at: position)
-        markViewForPosition[position] = markView
-        addSubview(markView)
+        self.markViewForPosition[position] = markView
+        self.addSubview(markView)
+        self.updateFrame(for: markView, at: position)
+        markView.animateIn {}
     }
     
     public func removeMarkView(at position: GameboardPosition) {
@@ -136,10 +137,12 @@ public class GameboardView: UIView {
     private func updateFrame(for markView: MarkView, at position: GameboardPosition) {
         let columnWidth = self.calculatedColumnWidth
         let rowHeight = self.calculatedRowHeight
+
         markView.frame = CGRect(x: CGFloat(position.column) * columnWidth,
                                 y: CGFloat(position.row) * rowHeight,
                                 width: columnWidth,
                                 height: rowHeight).insetBy(dx: 0.5 * Constants.lineWidth,
                                                            dy: 0.5 * Constants.lineWidth)
+        
     }
 }

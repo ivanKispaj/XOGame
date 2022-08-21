@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum TwoPlayerState {
+    case player
+    case computer
+}
 protocol GameState {
     
     var isComleted: Bool { get }

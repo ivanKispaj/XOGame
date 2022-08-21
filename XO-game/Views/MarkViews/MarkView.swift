@@ -8,7 +8,9 @@
 
 import UIKit
 
-public class MarkView: UIView {
+public class MarkView: UIView, Copying {
+
+    
     
     // MARK: - Properties
     
@@ -63,6 +65,13 @@ public class MarkView: UIView {
         super.init(coder: aDecoder)
     }
     
+    required init(_ prototype: MarkView) {
+        super.init(frame: prototype.frame)
+        self.lineWidth = prototype.lineWidth
+        self.lineColor = prototype.lineColor
+        self.textColor = prototype.textColor
+    }
+    
     // MARK: - UIView
     
     public final override func layoutSubviews() {
@@ -96,6 +105,7 @@ public class MarkView: UIView {
         animation.toValue = 1.0
         shapeLayer.add(animation, forKey: nil)
         CATransaction.commit()
+        completion()
     }
     
     public func animateOut(duration: TimeInterval = 0.5,
@@ -109,6 +119,7 @@ public class MarkView: UIView {
         animation.toValue = 0.0
         shapeLayer.add(animation, forKey: nil)
         CATransaction.commit()
+        completion()
     }
     
     // MARK: - UI
@@ -124,3 +135,5 @@ public class MarkView: UIView {
         // meant for subclasses to override
     }
 }
+
+
