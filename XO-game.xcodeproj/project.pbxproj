@@ -16,6 +16,7 @@
 		635E4B2828B26A5E00A35BA0 /* AFewStepReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E4B2728B26A5E00A35BA0 /* AFewStepReceiver.swift */; };
 		635E4B2A28B26CF300A35BA0 /* AFewStepCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E4B2928B26CF300A35BA0 /* AFewStepCommand.swift */; };
 		635E4B2C28B27A3A00A35BA0 /* AFewStepsInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E4B2B28B27A3A00A35BA0 /* AFewStepsInvoker.swift */; };
+		635E4B3028B2925200A35BA0 /* VsComputerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E4B2F28B2925200A35BA0 /* VsComputerState.swift */; };
 		63D04BEF28B0A3F2001EE399 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D04BEE28B0A3F2001EE399 /* GameState.swift */; };
 		63D04BF128B0A50A001EE399 /* PlayerInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D04BF028B0A50A001EE399 /* PlayerInputState.swift */; };
 		63D04BF328B0AE9F001EE399 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D04BF228B0AE9F001EE399 /* GameOverState.swift */; };
@@ -47,6 +48,7 @@
 		635E4B2728B26A5E00A35BA0 /* AFewStepReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFewStepReceiver.swift; sourceTree = "<group>"; };
 		635E4B2928B26CF300A35BA0 /* AFewStepCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFewStepCommand.swift; sourceTree = "<group>"; };
 		635E4B2B28B27A3A00A35BA0 /* AFewStepsInvoker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFewStepsInvoker.swift; sourceTree = "<group>"; };
+		635E4B2F28B2925200A35BA0 /* VsComputerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VsComputerState.swift; sourceTree = "<group>"; };
 		63D04BEE28B0A3F2001EE399 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		63D04BF028B0A50A001EE399 /* PlayerInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInputState.swift; sourceTree = "<group>"; };
 		63D04BF228B0AE9F001EE399 /* GameOverState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				63D04BF228B0AE9F001EE399 /* GameOverState.swift */,
 				63D04C1328B15A96001EE399 /* AFewStepsState.swift */,
 				635E4B1528B204C400A35BA0 /* AfewStepsGamePlay.swift */,
+				635E4B2F28B2925200A35BA0 /* VsComputerState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D04BF128B0A50A001EE399 /* PlayerInputState.swift in Sources */,
+				635E4B3028B2925200A35BA0 /* VsComputerState.swift in Sources */,
 				635E4B1928B2458400A35BA0 /* Copying.swift in Sources */,
 				63D04C1228B157FB001EE399 /* MenuViewController.swift in Sources */,
 				63D04C1428B15A96001EE399 /* AFewStepsState.swift in Sources */,
